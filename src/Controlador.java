@@ -7,6 +7,12 @@ public class Controlador {
 	
 	Calculadora calculadora;
 	
+	Escritor escritor = new Escritor("Resultado.txt");
+	
+	Lector lector;
+	
+	int lineaLector=0;
+	
 	public Controlador() {
 		
 		interfaz = new Interfaz(this);
@@ -82,7 +88,12 @@ public class Controlador {
 		
 		public String historial() {
 			
+			escritor.escribir(calculadora.pedirHistorial());
+			
+			escritor.cerrar();
+			
 			return calculadora.pedirHistorial();
+			
 		}
 		
 		public void limpiarC(){
@@ -101,6 +112,15 @@ public class Controlador {
 		public String getResultado() {
 			
 			return calculadora.getResultado();
+		}
+
+
+
+		public String leerArchivo(String nombreArchivo) {
+			
+			lector = new Lector("nombreArchivo");
+			
+			return lector.leerLinea();
 		}
 		
 		

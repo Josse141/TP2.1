@@ -1,13 +1,14 @@
 //Jose Alonso Mora
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea; 
 
 
-public class Interfaz extends JFrame{
+public class Interfaz extends JFrame {
 
 	JButton botonSuma;
 	JButton botonResta;
@@ -35,6 +36,8 @@ public class Interfaz extends JFrame{
 	/*private*/ double digito1;
 
 	/*private*/ double digito2;
+	
+	JOptionPane mensajes = new JOptionPane();
 
 
 	public Interfaz(Controlador control) {
@@ -281,6 +284,14 @@ public class Interfaz extends JFrame{
 	public void setText(String text) {
 		
 		textoIngreso.setText(text);
+	}
+
+
+	@SuppressWarnings("static-access")
+	
+	public String solicitarArchivo() {
+		
+		return mensajes.showInputDialog("Ingrese el nombre del archivo");
 	}
 
 }

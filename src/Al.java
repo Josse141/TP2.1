@@ -111,6 +111,22 @@ public class Al implements ActionListener{
 
 			break;
 			//-----------------------------	
+			
+			
+		case "Leer Archivo":
+			
+			operador = "Leer";
+			
+			this.controlador.leerArchivo(interfaz.solicitarArchivo());
+
+			//TODO Agregar funciones luego de leer archivo
+			
+			this.interfaz.clearText();
+			
+			controlador.raiz();
+
+			break;
+			//-----------------------------	
 
 		case "=":
 			
