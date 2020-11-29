@@ -14,7 +14,13 @@ public class Al implements ActionListener{
 	//private double digito2;
 	
 	String resultado;
+	
+	
 	String operador;
+	
+	private String temporalDigito1="";
+	
+	private String temporalDigito2="";
 
 	public Al(Interfaz i, Controlador c) {
 		controlador= c ;
@@ -24,6 +30,12 @@ public class Al implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 
 		String h = arg0.getActionCommand();
+		//String j="";
+		
+		//if(h.contains("X")==true) {
+			
+			//j = h.substring(0,h.length()-1);
+		//}
 		
 		switch(h) {
 
@@ -31,16 +43,40 @@ public class Al implements ActionListener{
 			
 			operador = "+";
 			
+			
+			
 			//String digito1 = interfaz.getTextoIngreso1();
 			
 			//digito1 = digito1.substring(0, digito1.length()-1);
 			
 			//double d1 = Double.parseDouble(digito1);
 			
-			this.controlador.guardarDig1(interfaz.getTextoIngreso1());
-			
-			this.interfaz.clearText();
-			
+			if(interfaz.getTextoIngreso1().contains("X")) {
+				
+				String temporal = interfaz.getTextoIngreso1().replace('X', ' ');
+				
+				temporal = (temporal.substring(0, temporal.length()-1));
+					
+				temporalDigito1 = temporal;
+				
+				this.controlador.guardarDig1(temporalDigito1);
+								
+				this.interfaz.clearText();
+				
+				temporalDigito1="";
+				
+				
+			}else {
+				
+				temporalDigito1 = interfaz.getTextoIngreso1();
+				
+				this.controlador.guardarDig1(temporalDigito1);
+								
+				this.interfaz.clearText();
+				
+				temporalDigito1 = "";
+					
+			}
 			//String digito2 = interfaz.getTextoIngreso2();
 			
 			//controlador.guardarDig2(interfaz.getTextoIngreso2());
@@ -52,10 +88,33 @@ public class Al implements ActionListener{
 
 			operador = "-";
 
-			this.controlador.guardarDig1(interfaz.getTextoIngreso1());
-
-			this.interfaz.clearText();
-
+			if(interfaz.getTextoIngreso1().contains("X")) {
+				
+				String temporal = interfaz.getTextoIngreso1().replace('X', ' ');
+				
+				temporal = (temporal.substring(0, temporal.length()-1));
+					
+				temporalDigito1 = temporal;
+				
+				this.controlador.guardarDig1(temporalDigito1);
+										
+				this.interfaz.clearText();
+				
+				temporalDigito1="";
+				
+				
+			}else {
+				
+				temporalDigito1 = interfaz.getTextoIngreso1();
+				
+				this.controlador.guardarDig1(temporalDigito1);
+								
+				this.interfaz.clearText();
+				
+				temporalDigito1 = "";
+					
+			}
+			
 			//controlador.guardarDig2(interfaz.getTextoIngreso2());
 
 			break;
@@ -65,9 +124,34 @@ public class Al implements ActionListener{
 			
 			operador = "*";
 			
-			this.controlador.guardarDig1(interfaz.getTextoIngreso1());
-
-			this.interfaz.clearText();
+				if(interfaz.getTextoIngreso1().contains("X")) {
+				
+				String temporal = interfaz.getTextoIngreso1().replace('X', ' ');
+				
+				temporal = (temporal.substring(0, temporal.length()-1));
+					
+				temporalDigito1 = temporal;
+				
+				this.controlador.guardarDig1(temporalDigito1);
+										
+				this.interfaz.clearText();
+				
+				temporalDigito1="";
+				
+				
+			}else {
+				
+				temporalDigito1 = interfaz.getTextoIngreso1();
+				
+				this.controlador.guardarDig1(temporalDigito1);
+								
+				this.interfaz.clearText();
+				
+				temporalDigito1 = "";
+						
+				
+					
+			}
 			
 			//controlador.guardarDig2(interfaz.getTextoIngreso2());
 
@@ -77,9 +161,34 @@ public class Al implements ActionListener{
 			
 			operador = "÷";
 			
-			this.controlador.guardarDig1(interfaz.getTextoIngreso1());
-
-			this.interfaz.clearText();
+				if(interfaz.getTextoIngreso1().contains("X")) {
+				
+				String temporal = interfaz.getTextoIngreso1().replace('X', ' ');
+				
+				temporal = (temporal.substring(0, temporal.length()-1));
+					
+				temporalDigito1 = temporal;
+				
+				this.controlador.guardarDig1(temporalDigito1);
+										
+				this.interfaz.clearText();
+				
+				temporalDigito1="";
+				
+				
+			}else {
+				
+				temporalDigito1 = interfaz.getTextoIngreso1();
+				
+				this.controlador.guardarDig1(temporalDigito1);
+								
+				this.interfaz.clearText();
+				
+				temporalDigito1 = "";
+						
+				
+					
+			}
 
 			//controlador.guardarDig2(interfaz.getTextoIngreso2());
 
@@ -90,9 +199,25 @@ public class Al implements ActionListener{
 			
 			operador = "^";
 			
-			this.controlador.guardarDig1(interfaz.getTextoIngreso1());
-
-			this.interfaz.clearText();
+			if(interfaz.getTextoIngreso1().contains("X")) {
+				
+				String temporal = interfaz.getTextoIngreso1().replace('X', ' ');
+				
+				temporal = (temporal.substring(0, temporal.length()-1));
+						
+				this.controlador.guardarDig1(temporal);
+				
+				
+				this.interfaz.clearText();
+				
+				
+			}else {
+				
+				this.controlador.guardarDig1(interfaz.getTextoIngreso1());
+				
+				this.interfaz.clearText();
+					
+			}
 			
 			controlador.potenciar();
 			
@@ -131,7 +256,11 @@ public class Al implements ActionListener{
 		case "=":
 			
 			try {
-			controlador.guardarDig2(interfaz.getTextoIngreso2());
+				
+			temporalDigito2 = interfaz.getTextoIngreso1();
+				
+			controlador.guardarDig2(temporalDigito2);			
+			
 			
 			//switch para elegir operacion a realizar
 			
@@ -150,7 +279,7 @@ public class Al implements ActionListener{
 				break;
 				//-----------------------------	
 
-			case "x":
+			case "*":
 				
 				controlador.multiplicar();
 

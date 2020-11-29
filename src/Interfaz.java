@@ -243,8 +243,14 @@ public class Interfaz extends JFrame {
 		}
 		 */
 
+		if(digitoSeleccionado=="x") {
+			
+			textoIngreso.setText(textoIngreso.getText());
+			
+		}else {
+		
 		textoIngreso.setText(textoIngreso.getText()+digitoSeleccionado);
-
+		}
 	}
 
 	public String getTextoIngreso1() {
