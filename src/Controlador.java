@@ -124,6 +124,20 @@ public class Controlador {
 		}
 		
 		
+		public void setArchivoLeido(String lectura) {
+			
+			calculadora.setArchivoLeido(lectura);
+			
+		}
+		
+		public String getArchivoLeido() {
+			
+			
+			return calculadora.getArchivoLeido();
+		}
+		
+		
+		
 
 	}
 

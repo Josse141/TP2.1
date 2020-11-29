@@ -20,6 +20,8 @@ public class Calculadora {
 	
 	String resultado = "";
 	
+	String archivoLeido ="";
+	
 	public Calculadora(){
 		
 		
@@ -210,5 +212,16 @@ public class Calculadora {
 	public void setResultado(String r) {
 		
 		resultado = r;
+	}
+	
+	public void setArchivoLeido(String lectura) {
+		
+		archivoLeido = lectura;
+		
+	}
+	
+	public String getArchivoLeido() {
+		
+		return archivoLeido;
 	}
 }

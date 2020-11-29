@@ -39,6 +39,16 @@ public class Al implements ActionListener{
 		
 		switch(h) {
 
+		case "Leer":
+			
+			controlador.setArchivoLeido(controlador.leerArchivo(interfaz.solicitarArchivo()));
+			
+			interfaz.mostrarArchivoLeido(controlador.getArchivoLeido());
+			
+			break;
+			//-----------------------------	
+			
+		
 		case "+":
 			
 			operador = "+";

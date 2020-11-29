@@ -24,6 +24,7 @@ public class Interfaz extends JFrame {
 	JButton botonHistorial;
 	JButton botonConvertir;
 	JButton botonIncognita;
+	JButton botonLeer;
 
 
 	private JButton numerales[][];
@@ -166,6 +167,11 @@ public class Interfaz extends JFrame {
 		botonIncognita.addActionListener(al);
 		botonIncognita.setBounds(270, 210, 60, 30);
 		
+		botonLeer = new JButton("Leer");
+		botonLeer.setActionCommand("Leer");
+		botonLeer.addActionListener(al);
+		botonLeer.setBounds(270, 270, 60, 30);
+		
 
 
 
@@ -202,6 +208,8 @@ public class Interfaz extends JFrame {
 		add(botonConvertir);
 		
 		add(botonIncognita);
+		
+		add(botonLeer);
 
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -281,9 +289,16 @@ public class Interfaz extends JFrame {
 	}
 
 
-	public void mostrarResultado(double suma) {
+	public void mostrarResultado(double resultado) {
 
-		textoIngreso.setText(""+suma);
+		textoIngreso.setText(""+resultado+"X");
+
+	}
+	
+	
+	public void mostrarArchivoLeido(String resultado) {
+
+		textoIngreso.setText(resultado);
 
 	}
 	
@@ -299,5 +314,8 @@ public class Interfaz extends JFrame {
 		
 		return mensajes.showInputDialog("Ingrese el nombre del archivo");
 	}
+	
+	
+	
 
 }
