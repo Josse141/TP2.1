@@ -41,7 +41,7 @@ public class Al implements ActionListener{
 
 		case "Leer":
 			
-			controlador.setArchivoLeido(controlador.leerArchivo(interfaz.solicitarArchivo()));
+			controlador.setArchivoLeido(controlador.leerArchivo(interfaz.solicitarRuta(),interfaz.solicitarArchivo()));
 			
 			interfaz.mostrarArchivoLeido(controlador.getArchivoLeido());
 			
@@ -252,7 +252,7 @@ public class Al implements ActionListener{
 			
 			operador = "Leer";
 			
-			this.controlador.leerArchivo(interfaz.solicitarArchivo());
+			this.controlador.leerArchivo(interfaz.solicitarRuta(),interfaz.solicitarArchivo());
 
 			//TODO Agregar funciones luego de leer archivo
 			

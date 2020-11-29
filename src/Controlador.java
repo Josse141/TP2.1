@@ -116,9 +116,9 @@ public class Controlador {
 
 
 
-		public String leerArchivo(String nombreArchivo) {
+		public String leerArchivo(String rutaArchivo, String nombreArchivo) {
 			
-			lector = new Lector("nombreArchivo");
+			lector = new Lector(rutaArchivo, nombreArchivo);
 			
 			return lector.leerLinea();
 		}

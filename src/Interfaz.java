@@ -316,6 +316,13 @@ public class Interfaz extends JFrame {
 	}
 	
 	
+	@SuppressWarnings("static-access")
+	public String solicitarRuta() {
+		
+		return mensajes.showInputDialog("Ingrese la ruta de la carpeta que contiene el archivo");
+	}
+	
+	
 	
 
 }
