@@ -14,6 +14,8 @@ public class Lista
     // instance variables - replace the example below with your own
     private Nodo inicio;
     private int tamano;
+    
+    private String contenidoLista="";
 
     public void Lista()
     {
@@ -56,7 +58,7 @@ public class Lista
     }
     
          
-    public void imprimirLista()
+    public String retornarLista()
     {
         if(!esVacia())
         {
@@ -65,13 +67,17 @@ public class Lista
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
-                auxiliar = auxiliar.getSiguiente();
+                
+            	contenidoLista = contenidoLista +"H" + auxiliar.getValor();
+            	auxiliar = auxiliar.getSiguiente();
+            	      
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+            contenidoLista = contenidoLista +"H" + auxiliar.getValor();
         }
+        
+        return contenidoLista;
     }
     
     

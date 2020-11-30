@@ -3,6 +3,9 @@
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea; 
@@ -26,6 +29,7 @@ public class Interfaz extends JFrame {
 	JButton botonIncognita;
 	JButton botonLeer;
 	JButton botonEcuacion;
+	JButton botonInfo;
 
 
 	private JButton numerales[][];
@@ -44,7 +48,7 @@ public class Interfaz extends JFrame {
 
 	public Interfaz(Controlador control) {
 		
-		this.setTitle("Calculadora Jose Alonso Mora Artavia");
+		this.setTitle("Calculadora y Ecuaciones Jose Alonso Mora Artavia");
 		controlador = control;
 		Al al = new Al(this, control);
 
@@ -64,6 +68,7 @@ public class Interfaz extends JFrame {
 				numerales[i][j].setBounds(j*60+10, i*60+90, 60, 60);
 				numerales[i][j].setActionCommand(numeralesCalc--+"");
 				numerales[i][j].addActionListener(al);
+				numerales[i][j].setBackground(new Color(197,255,211));
 				add(numerales[i][j]);
 
 			}
@@ -93,90 +98,114 @@ public class Interfaz extends JFrame {
 		botonSuma.setActionCommand("+");
 		botonSuma.addActionListener(al);
 		botonSuma.setBounds(200, 90, 60, 30);
+		botonSuma.setBackground(new Color(195,181,235));
 
 
 		botonResta = new JButton("-");
 		botonResta.setActionCommand("-");
 		botonResta.addActionListener(al);
 		botonResta.setBounds(200, 150, 60, 30);
+		botonResta.setBackground(new Color(195,181,235));
 
 
 		botonMultiplicacion = new JButton("*");
 		botonMultiplicacion.setActionCommand("*");
 		botonMultiplicacion.addActionListener(al);
 		botonMultiplicacion.setBounds(200, 210, 60, 30);
+		botonMultiplicacion.setBackground(new Color(195,181,235));
 
 
 		botonDivision = new JButton("÷");
 		botonDivision.setActionCommand("÷");
 		botonDivision.addActionListener(al);
 		botonDivision.setBounds(200, 270, 60, 30);
+		botonDivision.setBackground(new Color(195,181,235));
 
 
 		botonPotencia = new JButton("^");
 		botonPotencia.setActionCommand("^");
 		botonPotencia.addActionListener(al);
 		botonPotencia.setBounds(270, 90, 60, 30);
+		botonPotencia.setBackground(new Color(195,181,235));
 
 
 		botonRaiz = new JButton("√");
 		botonRaiz.setActionCommand("√");
 		botonRaiz.addActionListener(al);
 		botonRaiz.setBounds(270, 150, 60, 30);
+		botonRaiz.setBackground(new Color(195,181,235));
 
 
 		botonM = new JButton("M");
 		botonM.setActionCommand("M");
 		botonM.addActionListener(al);
 		botonM.setBounds(10, 50, 60, 30);
+		botonM.setBackground(new Color(195,181,235));
 
 
 		botonMC = new JButton("MC");
 		botonMC.setActionCommand("MC");
 		botonMC.addActionListener(al);
 		botonMC.setBounds(70, 50, 60, 30);
+		botonMC.setBackground(new Color(195,181,235));
 
 
 		botonMR = new JButton("MR");
 		botonMR.setActionCommand("MR");
 		botonMR.addActionListener(al);
 		botonMR.setBounds(130, 50, 60, 30);
+		botonMR.setBackground(new Color(195,181,235));
 		
 		
 		botonCE = new JButton("CE");
 		botonCE.setActionCommand("CE");
 		botonCE.addActionListener(al);
 		botonCE.setBounds(200, 50, 60, 30);
+		botonCE.setBackground(new Color(195,181,235));
 		
 		botonC = new JButton("C");
 		botonC.setActionCommand("C");
 		botonC.addActionListener(al);
 		botonC.setBounds(270, 50, 60, 30);
+		botonC.setBackground(new Color(195,181,235));
 		
 		botonHistorial = new JButton("Historial");
 		botonHistorial.setActionCommand("Historial");
 		botonHistorial.addActionListener(al);
 		botonHistorial.setBounds(200, 380, 130, 30);
+		botonHistorial.setBackground(new Color(189, 210,240));
 		
 		botonConvertir = new JButton("Convertir");
 		botonConvertir.setActionCommand("Convertir");
 		botonConvertir.addActionListener(al);
 		botonConvertir.setBounds(10, 380, 180, 30);
+		botonConvertir.setBackground(new Color(189, 210,240));
 		
 		botonIncognita = new JButton("X");
 		botonIncognita.setActionCommand("X");
 		botonIncognita.addActionListener(al);
 		botonIncognita.setBounds(270, 210, 60, 30);
+		botonIncognita.setBackground(new Color(195,181,235));
+		
+		
+		botonInfo = new JButton("Info");
+		botonInfo.setActionCommand("Info");
+		botonInfo.addActionListener(al);
+		botonInfo.setBounds(270, 270, 60, 30);
+		botonInfo.setBackground(new Color(255, 210,216));
+		
 		
 		botonLeer = new JButton("Leer");
 		botonLeer.setActionCommand("Leer");
 		botonLeer.addActionListener(al);
 		botonLeer.setBounds(200, 340, 130, 30);
+		botonLeer.setBackground(new Color(255, 210,216));
 		
 		botonEcuacion = new JButton("Ecuacion");
 		botonEcuacion.setActionCommand("Ecuacion");
 		botonEcuacion.addActionListener(al);
 		botonEcuacion.setBounds(10, 340, 180, 30);
+		botonEcuacion.setBackground(new Color(255, 210,216));
 		
 
 
@@ -218,6 +247,8 @@ public class Interfaz extends JFrame {
 		add(botonLeer);
 		
 		add(botonEcuacion);
+		
+		add(botonInfo);
 
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

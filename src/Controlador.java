@@ -13,6 +13,9 @@ public class Controlador {
 	
 	int lineaLector=0;
 	
+	Lista lista = new Lista();
+	
+	
 	public Controlador() {
 		
 		interfaz = new Interfaz(this);
@@ -136,13 +139,24 @@ public class Controlador {
 			
 		}
 		
+		/**
+		 * 
+		 * 
+		 * 
+		 * @return
+		 */
+		
 		public String getArchivoLeido() {
 			
 			
 			return calculadora.getArchivoLeido();
 		}
 
-
+		/**
+		 * Ejecutar la ecuacion
+		 * 
+		 * @return
+		 */
 
 		public String ejecutarEcuacion() {
 			
@@ -151,6 +165,32 @@ public class Controlador {
 			calculadora.ejecutarEcuacion();
 			
 			return calculadora.getResultadoEcuacion();
+		}
+		
+		
+		/**
+		 * 
+		 * Agregar datos de ecuacion a lista enlazada
+		 * 
+		 * @param ecuacion
+		 */
+		
+		public void agregarALista(String ecuacion) {
+			
+			lista.agregarAlFinal(ecuacion);
+			
+		}
+		
+		/**
+		 * Obtener datos de ecuaciones desde la lista enlazada
+		 * 
+		 * @return
+		 */
+		
+		public String obtenerLista() {
+			
+			return lista.retornarLista();
+			
 		}
 		
 		
