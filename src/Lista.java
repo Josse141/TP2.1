@@ -1,11 +1,9 @@
-/**
+/** 
+ * @author Jose Alonso Mora Artavia B54665
  * 
+ *  
+ * @version 29-11-2020
  * 
- * @author Jose Alonso Mora Artavia
- * 
- * B54665
- * 
- * @version (25-11-2020)
  * 
  */
 
@@ -33,10 +31,10 @@ public class Lista
         return tamano;
     }
     
-    public void agregarAlFinal(String valor)
+    public void agregarAlFinal(String valor, String operador)
     {
         Nodo nuevoNodo = new Nodo();
-        nuevoNodo.setValor(valor);
+        nuevoNodo.setValor(valor, operador);
         
         if(esVacia())
         {

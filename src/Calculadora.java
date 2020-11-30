@@ -1,36 +1,48 @@
-//Jose Alonso Mora
-
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * Clase que se encarga de realizar los calculos solicitados por el usuario y aislar las varientes de forma segura
+ * 
+ */
 
 public class Calculadora {
 
 		
-	String savedInMemory;
+	private String savedInMemory;
 	
 	double digito1;
 	
 	double digito2;
 	
-	String historial = "";
+	private String historial = "";
 	
-	String octal;
+	private String octal;
 	
-	String hexadecimal;
+	private String hexadecimal;
 	
-	String binario;
+	private String binario;
 	
-	String resultado = "";
+	private String resultado = "";
 	
-	String archivoLeido ="";
+	private String archivoLeido ="";
 	
-	String ecuacion="";
+	private String ecuacion="";
 	
-	String resultadoEcuacion="";
+	private String resultadoEcuacion="";
 	
 	public Calculadora(){
 		
 		
 	}
 	
+	/**
+	 * Se encarga de sumas dos numeros suministrados
+	 * 
+	 * @return resultado de sumar 2 numeros
+	 */
 	
 	public double suma() {
 
@@ -42,6 +54,12 @@ public class Calculadora {
 	}
 
 
+	/**
+	 * Se encarga de restar dos numeros suministrados
+	 * 
+	 * @return resultado de restar 2 numeros
+	 */
+	
 	public double resta() {
 
 		historial = historial +digito1+ " - " + digito2+ " = " + (digito1-digito2) + "\n";
@@ -51,6 +69,12 @@ public class Calculadora {
 		return digito1-digito2;
 	}
 
+	/**
+	 * Se encarga de multiplicar dos numeros suministrados
+	 * 
+	 * @return resultado de multiplicar 2 numeros
+	 */
+	
 	public double multiplicacion() {
 
 		historial = historial +digito1+ " x " + digito2+ " = " + (digito1*digito2) + "\n";
@@ -60,6 +84,12 @@ public class Calculadora {
 		return digito1*digito2;
 	}
 
+	/**
+	 * Se encarga de dividir dos numeros suministrados
+	 * 
+	 * @return resultado de dividir 2 numeros
+	 */
+	
 	public double division() {
 
 		historial = historial +digito1+ " / " + digito2+ " = " + (digito1/digito2) + "\n";
@@ -69,6 +99,12 @@ public class Calculadora {
 		return digito1/digito2;
 	}
 
+	/**
+	 * Se encarga de elevar un numero suministrado a la potencia suministrada
+	 * 
+	 * @return resultado de elevar un numero a una potencia 
+	 */
+	
 	public double potencia() {
 
 		historial = historial +digito1+"^ = " + (Math.pow(digito1, digito2)) + "\n";
@@ -82,6 +118,12 @@ public class Calculadora {
 		return Math.pow(digito1, digito2);
 	}
 
+	/**
+	 * Se encarga de calcular la raiz cuadrada de un numero suministrado
+	 * 
+	 * @return raiz cuadrada de un numero
+	 */
+	
 	public double raizCuadrada() {
 
 		historial = historial + "√"+digito1+" = " + (Math.sqrt(digito1)) + "\n";
@@ -92,6 +134,12 @@ public class Calculadora {
 				
 	}
 
+	/**
+	 * Se encarga de salvar en una variable
+	 * 
+	 * 
+	 */
+	
 	public void  memorySave(String memory) {
 		
 		historial = historial + "Memory Saved" + "\n";
@@ -100,6 +148,12 @@ public class Calculadora {
 
 	}
 
+	/**
+	 * Se encarga de limpiar una variable guardada previamente
+	 * 
+	 * 
+	 */
+	
 	public void  memoryClear() {
 
 		historial = historial + "Memory Cleared" + "\n";
@@ -107,6 +161,12 @@ public class Calculadora {
 		this.savedInMemory = "";
 		
 	}
+	
+	/**
+	 * Se encarga de suministrar el valor de una variable previamente guardada
+	 * 
+	 * @return variable savedInMemory
+	 */
 
 	public String  memoryRecall() {
 		
@@ -119,6 +179,11 @@ public class Calculadora {
 	
 	
 
+	/**
+	 * Se encarga de guardar un numero Suministrado para posterior uso
+	 * 
+	 * 
+	 */
 
 	public void guardarDigito1(String digito) {
 		
@@ -130,6 +195,11 @@ public class Calculadora {
 		
 	}
 
+	/**
+	 * Se encarga de guardar un numero Suministrado para posterior uso
+	 * 
+	 * 
+	 */
 
 	public void guardarDigito2(String digito) {
 		
@@ -137,16 +207,30 @@ public class Calculadora {
 		
 	}
 	
+	/**
+	 * Agrega variable suministrada a variable de historial
+	 * 
+	 * 
+	 */
 	
 	public void agregarHistorial(String historial) {
 		
 		this.historial = historial;
 	}
 	
+	/**
+	 * 
+	 * Solicita variable de historial
+	 * 
+	 * @return historial
+	 */
+	
 	public String pedirHistorial() {
 		
 		return historial;
 	}
+	
+	
 	
 	public String pedirConversion() {
 		

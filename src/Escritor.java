@@ -1,3 +1,12 @@
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * 
+ */
+
 import java.io.*;
 
 public class Escritor
@@ -14,6 +23,8 @@ public class Escritor
     {
         abrir(ruta, true);
     }
+    
+    //Usar misma ruta de lector
     
     public void abrir(String ruta, boolean agregarAlFinal)
     {

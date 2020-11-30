@@ -1,4 +1,12 @@
-//Jose Alonso Mora
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * Clase encargada de escuchar los eventos de la interfaz mostrada al usuario y pasar esos eventos al controlador
+ * 
+ */
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,24 +37,104 @@ public class Al implements ActionListener{
 		interfaz = i;
 	}
 
+	/**
+	 * Lector de Eventos
+	 * 
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 
 		String h = arg0.getActionCommand();
+		
+		try {
 		
 		if(h=="Ecuacion") {
 			
 			modoEcuacion=true;
 			
-			this.interfaz.clearText();
+			
 		}	
 			
+		
+		
+		
 		if(modoEcuacion==true)	{
+			
+			
+			String ecuacionesSumas[]=interfaz.getTextoIngreso1().split("+");
+			
+			//String ecuacionesRestas[];
+			
+			//String ecuacionesMultiplicaciones[];
+			
+			//String ecuacionesDivisiones[];
+			
+			for(int contador =0; contador<ecuacionesSumas.length; contador++) {
+				
+				ecuacionesSumas[contador] = ecuacionesSumas[contador]+"+";
+				
+				if(ecuacionesSumas[contador].contains("-")) {
+					
+					
+					
+				}
+			}
+			
+			
+			String ecuaciones[]=interfaz.getTextoIngreso1().split(",");
+			
+			String ecuacionesString = "";
+			
+			for(int contador = 0; contador<ecuaciones.length; contador++) {
+				
+				
+				controlador.agregarALista(ecuaciones[contador].substring(0,ecuaciones[contador].length()-1), ecuaciones[contador].substring(ecuaciones[contador].length()-1));
+				
+			}
+					
+			
+			this.interfaz.clearText();
+			
+			for(int contador = 0; contador<ecuaciones.length; contador++) {
+				
+				String numero=ecuaciones[contador].split("elev")[0];
+				
+				numero = numero.replace("X", "");
+				
+				String elevacion=ecuaciones[contador].split("elev")[1];
+				
+				controlador.guardarDig1(numero);
+				
+				if(elevacion.substring(0, elevacion.length()-1).isEmpty()==true) {
+					
+					controlador.guardarDig2(elevacion);
+					
+				}else {
+					
+				controlador.guardarDig2(elevacion.substring(0, elevacion.length()-1));
+				
+				}
+				ecuacionesString = ecuacionesString +" "+controlador.potenciarEcuacion()+" "+elevacion.substring(elevacion.length()-1);
+				
+				
+				
+			}
+			
+			System.out.println(ecuacionesString);
+			
+			controlador.setArchivoLeido(ecuacionesString);
 			
 			//agregar a lista
 			
 			//cuando se presiona "=" se hace llamado a metodo para obtener todos los nodos y calcular a partir de lo obtenido.
 			
+			modoEcuacion=false;
+			
+		
+		
+		
+			
 		}else {
+			
 			
 		
 		switch(h) {
@@ -278,6 +366,14 @@ public class Al implements ActionListener{
 			
 			break;
 			//-----------------------------	
+			
+		case "info":
+			
+			interfaz.mostrarMensaje("Para agregar una ecuacion, por favor ingresela de forma alfanumerica con el teclado \nIngrese el numero seguido por la incognita X, \nLuego la palabra ( elev ) para simbolar la potencia, \nLuego el numero de potencia y el simbolo de operacion (+, -, *, /) \nque quiera usar seguido de una coma ( , )\nEl resto de la calculadora funciona normalmente.");
+			
+			break;
+			
+			//------------------------------
 
 		case "=":
 			
@@ -461,8 +557,15 @@ public class Al implements ActionListener{
 		}
 
 	}
-		
+		}catch(Exception e) {
+			
+			modoEcuacion=false;
+						
+			
 	}
+		
+	
 
 
+}
 }

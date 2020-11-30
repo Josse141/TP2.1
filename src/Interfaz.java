@@ -1,4 +1,11 @@
-//Jose Alonso Mora
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * 
+ */
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -189,7 +196,7 @@ public class Interfaz extends JFrame {
 		
 		
 		botonInfo = new JButton("Info");
-		botonInfo.setActionCommand("Info");
+		botonInfo.setActionCommand("info");
 		botonInfo.addActionListener(al);
 		botonInfo.setBounds(270, 270, 60, 30);
 		botonInfo.setBackground(new Color(255, 210,216));
@@ -359,6 +366,15 @@ public class Interfaz extends JFrame {
 	public String solicitarRuta() {
 		
 		return mensajes.showInputDialog("Ingrese la ruta de la carpeta que contiene el archivo");
+	}
+	
+	
+	
+	public void mostrarMensaje(String mensaje) {
+		
+		
+		mensajes.showMessageDialog(null, mensaje, "Informacion", 1);
+		
 	}
 	
 	

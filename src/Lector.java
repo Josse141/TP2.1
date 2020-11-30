@@ -1,3 +1,12 @@
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * 
+ */
+
 import java.io.*;
 import java.net.URL;
 

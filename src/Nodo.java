@@ -1,11 +1,9 @@
-/**
+/** 
+ * @author Jose Alonso Mora Artavia B54665
  * 
+ *  
+ * @version 29-11-2020
  * 
- * @author Jose Alonso Mora Artavia
- * 
- * B54665
- * 
- * @version (25-11-2020)
  * 
  */
 
@@ -13,6 +11,7 @@ public class Nodo
 {
     // instance variables - replace the example below with your own
     private String valor;
+    private String operador;
     private Nodo siguiente;
 
     /**
@@ -21,6 +20,7 @@ public class Nodo
     public void Nodo()
     {
         this.valor = "";
+        this.operador ="";
         this.siguiente = null;
     }
     
@@ -29,9 +29,13 @@ public class Nodo
         return valor;
     }
     
-    public void setValor(String valor)
+    public void setValor(String valor, String operador)
     {
-        this.valor = valor;
+        this.valor = valor.replace("X", "");
+        this.operador = operador.replace(" ", "");
+        
+        System.out.println(valor);
+        System.out.println(operador);
     }
 
     public Nodo getSiguiente()

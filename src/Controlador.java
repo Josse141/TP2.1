@@ -1,5 +1,11 @@
-//Jose Alonso Mora
-
+/** 
+ * @author Jose Alonso Mora Artavia B54665
+ * 
+ *  
+ * @version 29-11-2020
+ * 
+ * 
+ */
 
 public class Controlador {
 
@@ -66,6 +72,14 @@ public class Controlador {
 	
 	public void potenciar() {
 		interfaz.mostrarResultado(calculadora.potencia());
+
+	}
+	
+	
+	public String potenciarEcuacion() {
+		
+		
+		return ""+calculadora.potencia();
 
 	}
 	
@@ -175,9 +189,9 @@ public class Controlador {
 		 * @param ecuacion
 		 */
 		
-		public void agregarALista(String ecuacion) {
+		public void agregarALista(String ecuacion, String operador) {
 			
-			lista.agregarAlFinal(ecuacion);
+			lista.agregarAlFinal(ecuacion, operador);
 			
 		}
 		
