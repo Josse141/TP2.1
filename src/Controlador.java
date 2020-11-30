@@ -123,6 +123,12 @@ public class Controlador {
 			return lector.leerLinea();
 		}
 		
+		/**
+		 * 
+		 * accion Leer Al
+		 * 
+		 * @param lectura
+		 */
 		
 		public void setArchivoLeido(String lectura) {
 			
@@ -134,6 +140,17 @@ public class Controlador {
 			
 			
 			return calculadora.getArchivoLeido();
+		}
+
+
+
+		public String ejecutarEcuacion() {
+			
+			calculadora.establecerEcuacion(this.getArchivoLeido());
+			
+			calculadora.ejecutarEcuacion();
+			
+			return calculadora.getResultadoEcuacion();
 		}
 		
 		

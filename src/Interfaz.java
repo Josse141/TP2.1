@@ -25,6 +25,7 @@ public class Interfaz extends JFrame {
 	JButton botonConvertir;
 	JButton botonIncognita;
 	JButton botonLeer;
+	JButton botonEcuacion;
 
 
 	private JButton numerales[][];
@@ -85,7 +86,7 @@ public class Interfaz extends JFrame {
 		textoIngreso.setBounds(10, 10, 320, 30);
 
 		textoHistorial_Convertir = new JTextArea();
-		textoHistorial_Convertir.setBounds(10, 380, 320, 120);
+		textoHistorial_Convertir.setBounds(10, 420, 320, 120);
 
 
 		botonSuma = new JButton("+");
@@ -155,12 +156,12 @@ public class Interfaz extends JFrame {
 		botonHistorial = new JButton("Historial");
 		botonHistorial.setActionCommand("Historial");
 		botonHistorial.addActionListener(al);
-		botonHistorial.setBounds(200, 340, 130, 30);
+		botonHistorial.setBounds(200, 380, 130, 30);
 		
 		botonConvertir = new JButton("Convertir");
 		botonConvertir.setActionCommand("Convertir");
 		botonConvertir.addActionListener(al);
-		botonConvertir.setBounds(10, 340, 180, 30);
+		botonConvertir.setBounds(10, 380, 180, 30);
 		
 		botonIncognita = new JButton("X");
 		botonIncognita.setActionCommand("X");
@@ -170,7 +171,12 @@ public class Interfaz extends JFrame {
 		botonLeer = new JButton("Leer");
 		botonLeer.setActionCommand("Leer");
 		botonLeer.addActionListener(al);
-		botonLeer.setBounds(270, 270, 60, 30);
+		botonLeer.setBounds(200, 340, 130, 30);
+		
+		botonEcuacion = new JButton("Ecuacion");
+		botonEcuacion.setActionCommand("Ecuacion");
+		botonEcuacion.addActionListener(al);
+		botonEcuacion.setBounds(10, 340, 180, 30);
 		
 
 
@@ -210,6 +216,8 @@ public class Interfaz extends JFrame {
 		add(botonIncognita);
 		
 		add(botonLeer);
+		
+		add(botonEcuacion);
 
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

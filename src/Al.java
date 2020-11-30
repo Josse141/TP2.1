@@ -21,6 +21,8 @@ public class Al implements ActionListener{
 	private String temporalDigito1="";
 	
 	private String temporalDigito2="";
+	
+	private boolean modoEcuacion = false;
 
 	public Al(Interfaz i, Controlador c) {
 		controlador= c ;
@@ -30,12 +32,22 @@ public class Al implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 
 		String h = arg0.getActionCommand();
-		//String j="";
 		
-		//if(h.contains("X")==true) {
+		if(h=="Ecuacion") {
 			
-			//j = h.substring(0,h.length()-1);
-		//}
+			modoEcuacion=true;
+			
+			this.interfaz.clearText();
+		}	
+			
+		if(modoEcuacion==true)	{
+			
+			//agregar a lista
+			
+			//cuando se presiona "=" se hace llamado a metodo para obtener todos los nodos y calcular a partir de lo obtenido.
+			
+		}else {
+			
 		
 		switch(h) {
 
@@ -223,13 +235,17 @@ public class Al implements ActionListener{
 				
 			}else {
 				
-				this.controlador.guardarDig1(interfaz.getTextoIngreso1());
+				temporalDigito1 = interfaz.getTextoIngreso1();
 				
+				this.controlador.guardarDig1(temporalDigito1);
+								
 				this.interfaz.clearText();
+				
+				temporalDigito1 = "";
 					
 			}
 			
-			controlador.potenciar();
+			
 			
 			break;
 			//-----------------------------	
@@ -258,8 +274,8 @@ public class Al implements ActionListener{
 			
 			this.interfaz.clearText();
 			
-			controlador.raiz();
-
+			
+			
 			break;
 			//-----------------------------	
 
@@ -275,6 +291,12 @@ public class Al implements ActionListener{
 			//switch para elegir operacion a realizar
 			
 			switch (operador) {
+			
+			case "Leer":
+				
+				controlador.ejecutarEcuacion();
+				
+				break;
 			
 			case "+":
 				
@@ -300,7 +322,16 @@ public class Al implements ActionListener{
 				controlador.dividir();
 
 				break;
-				//-----------------------------			
+				//-----------------------------		
+				
+				
+			case"^":
+				
+				controlador.potenciar();
+				
+				break;
+				
+				//------------------------------
 /*
 			case "xÂ²":
 
@@ -429,6 +460,8 @@ public class Al implements ActionListener{
 
 		}
 
+	}
+		
 	}
 
 

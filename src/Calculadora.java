@@ -22,6 +22,10 @@ public class Calculadora {
 	
 	String archivoLeido ="";
 	
+	String ecuacion="";
+	
+	String resultadoEcuacion="";
+	
 	public Calculadora(){
 		
 		
@@ -67,15 +71,15 @@ public class Calculadora {
 
 	public double potencia() {
 
-		historial = historial +digito1+"^ = " + (Math.pow(digito1, 2)) + "\n";
+		historial = historial +digito1+"^ = " + (Math.pow(digito1, digito2)) + "\n";
 		
 		//cambiar el valor de la potencia
 		
 		//TODO cambiar valor de la potencia
 		
-		resultado = "" + (Math.pow(digito1, 2));
+		resultado = "" + (Math.pow(digito1, digito2));
 		
-		return Math.pow(digito1, 2);
+		return Math.pow(digito1, digito2);
 	}
 
 	public double raizCuadrada() {
@@ -223,5 +227,39 @@ public class Calculadora {
 	public String getArchivoLeido() {
 		
 		return archivoLeido;
+	}
+
+
+	/**
+	 * Establece campo de Ecuacion para futuro uso en calculo
+	 * 
+	 * @param archivoLeido
+	 */
+	
+	public void establecerEcuacion(String archivoLeido) {
+
+
+		ecuacion = archivoLeido;
+		
+	}
+
+	/**
+	 * Ejecuta la escuacion usando "ecuacion"
+	 * 	
+	 */
+
+	
+	public void ejecutarEcuacion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public String getResultadoEcuacion() {
+		
+		// TODO Auto-generated method stub
+		
+		
+		return resultadoEcuacion;
 	}
 }
